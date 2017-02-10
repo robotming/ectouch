@@ -51,6 +51,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => $routes,
+            'suffix' => '.html'
         ],
     ],
     'modules' => require(__DIR__ . '/component.php'),
