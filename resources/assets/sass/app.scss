@@ -1,9 +1,20 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Basic Style
+@import "../fonts/iconfont.css";
+
+@import "../css/swiper-3.2.5.min.css";
+
+@import "../css/zyUpload.css";
+
+@import "../css/jquery-ui-1.10.1.custom.min.css";
+
+@import "../css/ectouch.css";
