@@ -8,13 +8,17 @@ use yii\web\Controller;
 class MiscController extends Controller
 {
 
-    // ÑéÖ¤Âë
-    public function captcha() {
+    public function actionSearch(){
+        return $this->render('search');
+    }
+
+    // éªŒè¯ç 
+    public function actionCaptcha() {
         Image::buildImageVerify();
     }
 
-    // µØÇøÉ¸Ñ¡
-    public function region() {
+    // åœ°åŒºç­›é€‰
+    public function actionRegion() {
         $type = I('request.type', 0, 'intval');
         $parent = I('request.parent', 0, 'intval');
 
