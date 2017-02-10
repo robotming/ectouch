@@ -9,9 +9,9 @@ class AuthAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/admin/app.css',
+        'static/admin/css/app.css',
     ];
     public $js = [
-        'js/admin/app.js',
+        'static/admin/js/app.js',
     ];
 }

@@ -9,9 +9,9 @@ class DashboardAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/dashboard.css',
+        'static/admin/css/dashboard.css',
     ];
     public $js = [
-        'js/dashboard.js',
+        'static/admin/js/dashboard.js',
     ];
 }
