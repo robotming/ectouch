@@ -29,7 +29,7 @@ use yii\helpers\Url;
         </ul>
     </div>
 </aside>
-</section>
+
 <section class="menu-right padding-all j-content">
     <h5>女装</h5>
     <ul>
@@ -56,7 +56,7 @@ use yii\helpers\Url;
         </li>
     </ul>
 </section>
-</section>
+
 <section class="menu-right padding-all j-content" style="display:none">
     <h5>男装</h5>
     <ul>
@@ -89,7 +89,7 @@ use yii\helpers\Url;
         </li>
     </ul>
 </section>
-</section>
+
 <section class="menu-right padding-all j-content" style="display:none">
     <h5>母婴用品</h5>
     <ul>
@@ -130,7 +130,6 @@ use yii\helpers\Url;
             <img src="http://shop.ectouch.cn/v2/images/201509/thumb_img/13398_thumb_G_1442262641146.jpg"/><span>澡盆洗护</span>
         </li>
     </ul>
-
 </section>
 </div>
 
