@@ -7,7 +7,7 @@ Yii::setAlias('@database', dirname(__DIR__) . '/database');
 Yii::setAlias('@webroot', dirname(__DIR__) . '/public');
 Yii::setAlias('@resources', dirname(__DIR__) . '/resources');
 Yii::setAlias('@lang', dirname(__DIR__) . '/resources/lang');
-Yii::setAlias('@plugins', dirname(__DIR__).'/resources/plugins');
+Yii::setAlias('@plugins', dirname(__DIR__) . '/resources/plugins');
 Yii::setAlias('@view', dirname(__DIR__) . '/resources/views');
 Yii::setAlias('@storage', dirname(__DIR__) . '/storage');
 Yii::setAlias('@runtime', dirname(__DIR__) . '/storage/framework');
