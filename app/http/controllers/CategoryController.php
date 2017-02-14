@@ -3,8 +3,7 @@
 namespace app\http\controllers;
 
 use Yii;
-use app\models\Category;
-use app\models\Brand;
+use app\repositorys\CategoryRepository;
 
 class CategoryController extends FoundationController
 {
@@ -22,7 +21,7 @@ class CategoryController extends FoundationController
         $category = $cache->get($key);
 
         if ($category === false) {
-            $category = Category::getAll(['id' => 0]);
+            $category = CategoryRepository::getAll(['id' => 0]);
             $cache->set($key, $category);
         }
 
@@ -37,8 +36,7 @@ class CategoryController extends FoundationController
     public function actionDetail()
     {
         $id = Yii::$app->request->get('id', 0);
-        $category = Category::find()->where(['cat_id' => $id])->asArray()->one();
-
+        $category = CategoryRepository::getDetail(['id' => $id]);
 
         return $this->render('detail', ['category' => $category]);
     }
