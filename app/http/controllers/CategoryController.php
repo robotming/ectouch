@@ -3,9 +3,10 @@
 namespace app\http\controllers;
 
 use Yii;
-use yii\web\Controller;
+use app\models\Category;
+use app\models\Brand;
 
-class CategoryController extends Controller
+class CategoryController extends FoundationController
 {
 
     /**
@@ -15,7 +16,31 @@ class CategoryController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $cache = Yii::$app->cache;
+        $key = 'category_all';
+
+        $category = $cache->get($key);
+
+        if ($category === false) {
+            $category = Category::getAll(['id' => 0]);
+            $cache->set($key, $category);
+        }
+
+        return $this->render('index', ['category' => $category]);
+    }
+
+    /**
+     * Displays detailpage.
+     *
+     * @return string
+     */
+    public function actionDetail()
+    {
+        $id = Yii::$app->request->get('id', 0);
+        $category = Category::find()->where(['cat_id' => $id])->asArray()->one();
+
+
+        return $this->render('detail', ['category' => $category]);
     }
 
 }

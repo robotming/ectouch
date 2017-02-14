@@ -3,9 +3,8 @@
 namespace app\http\controllers;
 
 use Yii;
-use yii\web\Controller;
 
-class MiscController extends Controller
+class MiscController extends FoundationController
 {
 
     public function actionSearch(){

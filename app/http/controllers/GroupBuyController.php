@@ -3,9 +3,8 @@
 namespace app\http\controllers;
 
 use Yii;
-use yii\web\Controller;
 
-class GroupBuyController extends Controller
+class GroupBuyController extends FoundationController
 {
 
     /**

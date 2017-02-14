@@ -3,9 +3,8 @@
 namespace app\http\controllers;
 
 use Yii;
-use yii\web\Controller;
 
-class RespondController extends Controller
+class RespondController extends FoundationController
 {
 
     /**

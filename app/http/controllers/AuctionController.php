@@ -3,9 +3,8 @@
 namespace app\http\controllers;
 
 use Yii;
-use yii\web\Controller;
 
-class AuctionController extends Controller
+class AuctionController extends FoundationController
 {
 
     /**
