@@ -12,7 +12,7 @@ use Yii;
  * @property integer $is_exchange
  * @property integer $is_hot
  */
-class ExchangeGoods extends \yii\db\ActiveRecord
+class ExchangeGoods extends Foundation
 {
     /**
      * @inheritdoc

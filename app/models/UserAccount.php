@@ -19,7 +19,7 @@ use Yii;
  * @property string $payment
  * @property integer $is_paid
  */
-class UserAccount extends \yii\db\ActiveRecord
+class UserAccount extends Foundation
 {
     /**
      * @inheritdoc

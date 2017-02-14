@@ -23,7 +23,7 @@ use Yii;
  * @property string $sign_building
  * @property string $best_time
  */
-class UserAddress extends \yii\db\ActiveRecord
+class UserAddress extends Foundation
 {
     /**
      * @inheritdoc

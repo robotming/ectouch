@@ -14,7 +14,7 @@ use Yii;
  * @property integer $can_multi
  * @property string $vote_count
  */
-class Vote extends \yii\db\ActiveRecord
+class Vote extends Foundation
 {
     /**
      * @inheritdoc

@@ -13,7 +13,7 @@ use Yii;
  * @property string $add_time
  * @property integer $is_attention
  */
-class CollectGoods extends \yii\db\ActiveRecord
+class CollectGoods extends Foundation
 {
     /**
      * @inheritdoc
@@ -45,5 +45,21 @@ class CollectGoods extends \yii\db\ActiveRecord
             'add_time' => Yii::t('app', 'Add Time'),
             'is_attention' => Yii::t('app', 'Is Attention'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
     }
 }

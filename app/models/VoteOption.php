@@ -13,7 +13,7 @@ use Yii;
  * @property string $option_count
  * @property integer $option_order
  */
-class VoteOption extends \yii\db\ActiveRecord
+class VoteOption extends Foundation
 {
     /**
      * @inheritdoc

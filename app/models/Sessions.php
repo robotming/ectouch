@@ -18,7 +18,7 @@ use Yii;
  * @property string $email
  * @property string $data
  */
-class Sessions extends \yii\db\ActiveRecord
+class Sessions extends Foundation
 {
     /**
      * @inheritdoc

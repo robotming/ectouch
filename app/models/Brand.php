@@ -15,7 +15,7 @@ use Yii;
  * @property integer $sort_order
  * @property integer $is_show
  */
-class Brand extends \yii\db\ActiveRecord
+class Brand extends Foundation
 {
     /**
      * @inheritdoc
@@ -54,5 +54,10 @@ class Brand extends \yii\db\ActiveRecord
             'sort_order' => Yii::t('app', 'Sort Order'),
             'is_show' => Yii::t('app', 'Is Show'),
         ];
+    }
+
+    public function afterFind()
+    {
+        $this->brand_logo = Foundation::getDataPath('brandlogo/' . $this->brand_logo);
     }
 }

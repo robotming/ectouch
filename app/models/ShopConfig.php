@@ -16,7 +16,7 @@ use Yii;
  * @property string $value
  * @property integer $sort_order
  */
-class ShopConfig extends \yii\db\ActiveRecord
+class ShopConfig extends Foundation
 {
     /**
      * @inheritdoc

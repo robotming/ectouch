@@ -21,7 +21,7 @@ use Yii;
  * @property string $click_count
  * @property integer $enabled
  */
-class Ad extends \yii\db\ActiveRecord
+class Ad extends Foundation
 {
     /**
      * @inheritdoc
@@ -65,5 +65,13 @@ class Ad extends \yii\db\ActiveRecord
             'click_count' => Yii::t('app', 'Click Count'),
             'enabled' => Yii::t('app', 'Enabled'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPosition()
+    {
+        return $this->hasOne(AdPosition::className(), ['position_id' => 'position_id']);
     }
 }

@@ -39,7 +39,7 @@ use Yii;
  * @property string $return_time
  * @property integer $agency_id
  */
-class BackOrder extends \yii\db\ActiveRecord
+class BackOrder extends Foundation
 {
     /**
      * @inheritdoc
@@ -106,5 +106,45 @@ class BackOrder extends \yii\db\ActiveRecord
             'return_time' => Yii::t('app', 'Return Time'),
             'agency_id' => Yii::t('app', 'Agency ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBackGoods()
+    {
+        return $this->hasMany(BackGoods::className(), ['back_id' => 'back_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOrder()
+    {
+        return $this->hasOne(OrderInfo::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getShipping()
+    {
+        return $this->hasOne(Shipping::className(), ['shipping_id' => 'shipping_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAgency()
+    {
+        return $this->hasOne(Agency::className(), ['agency_id' => 'agency_id']);
     }
 }

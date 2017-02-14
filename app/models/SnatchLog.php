@@ -13,7 +13,7 @@ use Yii;
  * @property string $bid_price
  * @property string $bid_time
  */
-class SnatchLog extends \yii\db\ActiveRecord
+class SnatchLog extends Foundation
 {
     /**
      * @inheritdoc

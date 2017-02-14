@@ -17,7 +17,7 @@ use Yii;
  * @property string $order_sn
  * @property string $crc32
  */
-class VirtualCard extends \yii\db\ActiveRecord
+class VirtualCard extends Foundation
 {
     /**
      * @inheritdoc

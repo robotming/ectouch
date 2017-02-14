@@ -21,7 +21,7 @@ use Yii;
  * @property string $dispose_time
  * @property string $dispose_note
  */
-class BookingGoods extends \yii\db\ActiveRecord
+class BookingGoods extends Foundation
 {
     /**
      * @inheritdoc
@@ -64,5 +64,21 @@ class BookingGoods extends \yii\db\ActiveRecord
             'dispose_time' => Yii::t('app', 'Dispose Time'),
             'dispose_note' => Yii::t('app', 'Dispose Note'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
     }
 }

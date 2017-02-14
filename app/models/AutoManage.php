@@ -12,7 +12,7 @@ use Yii;
  * @property integer $starttime
  * @property integer $endtime
  */
-class AutoManage extends \yii\db\ActiveRecord
+class AutoManage extends Foundation
 {
     /**
      * @inheritdoc

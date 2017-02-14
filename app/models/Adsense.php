@@ -11,7 +11,7 @@ use Yii;
  * @property string $referer
  * @property string $clicks
  */
-class Adsense extends \yii\db\ActiveRecord
+class Adsense extends Foundation
 {
     /**
      * @inheritdoc

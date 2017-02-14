@@ -12,7 +12,7 @@ use Yii;
  * @property integer $user_rank
  * @property string $user_price
  */
-class MemberPrice extends \yii\db\ActiveRecord
+class MemberPrice extends Foundation
 {
     /**
      * @inheritdoc

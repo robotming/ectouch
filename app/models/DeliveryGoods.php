@@ -21,7 +21,7 @@ use Yii;
  * @property integer $send_number
  * @property string $goods_attr
  */
-class DeliveryGoods extends \yii\db\ActiveRecord
+class DeliveryGoods extends Foundation
 {
     /**
      * @inheritdoc
@@ -65,5 +65,29 @@ class DeliveryGoods extends \yii\db\ActiveRecord
             'send_number' => Yii::t('app', 'Send Number'),
             'goods_attr' => Yii::t('app', 'Goods Attr'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDeliveryOrder()
+    {
+        return $this->hasOne(DeliveryOrder::className(), ['delivery_id' => 'delivery_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasOne(Products::className(), ['product_id' => 'product_id']);
     }
 }

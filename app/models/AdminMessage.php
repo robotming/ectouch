@@ -17,7 +17,7 @@ use Yii;
  * @property string $title
  * @property string $message
  */
-class AdminMessage extends \yii\db\ActiveRecord
+class AdminMessage extends Foundation
 {
     /**
      * @inheritdoc
@@ -56,5 +56,21 @@ class AdminMessage extends \yii\db\ActiveRecord
             'title' => Yii::t('app', 'Title'),
             'message' => Yii::t('app', 'Message'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSender()
+    {
+        return $this->hasOne(AdminUser::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReceiver()
+    {
+        return $this->hasOne(AdminUser::className(), ['user_id' => 'user_id']);
     }
 }

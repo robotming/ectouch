@@ -12,7 +12,7 @@ use Yii;
  * @property string $reg_field_id
  * @property string $content
  */
-class RegExtendInfo extends \yii\db\ActiveRecord
+class RegExtendInfo extends Foundation
 {
     /**
      * @inheritdoc

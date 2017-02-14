@@ -12,7 +12,7 @@ use Yii;
  * @property string $ip_address
  * @property string $vote_time
  */
-class VoteLog extends \yii\db\ActiveRecord
+class VoteLog extends Foundation
 {
     /**
      * @inheritdoc

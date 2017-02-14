@@ -12,7 +12,7 @@ use Yii;
  * @property integer $stat
  * @property string $hash
  */
-class EmailList extends \yii\db\ActiveRecord
+class EmailList extends Foundation
 {
     /**
      * @inheritdoc

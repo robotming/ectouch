@@ -20,7 +20,7 @@ use Yii;
  * @property string $parent_id
  * @property string $user_id
  */
-class Comment extends \yii\db\ActiveRecord
+class Comment extends Foundation
 {
     /**
      * @inheritdoc
@@ -63,5 +63,13 @@ class Comment extends \yii\db\ActiveRecord
             'parent_id' => Yii::t('app', 'Parent ID'),
             'user_id' => Yii::t('app', 'User ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
     }
 }

@@ -12,7 +12,7 @@ use Yii;
  * @property string $file
  * @property integer $time
  */
-class ErrorLog extends \yii\db\ActiveRecord
+class ErrorLog extends Foundation
 {
     /**
      * @inheritdoc

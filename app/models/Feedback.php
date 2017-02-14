@@ -21,7 +21,7 @@ use Yii;
  * @property string $order_id
  * @property integer $msg_area
  */
-class Feedback extends \yii\db\ActiveRecord
+class Feedback extends Foundation
 {
     /**
      * @inheritdoc
@@ -66,5 +66,29 @@ class Feedback extends \yii\db\ActiveRecord
             'order_id' => Yii::t('app', 'Order ID'),
             'msg_area' => Yii::t('app', 'Msg Area'),
         ];
+    }
+
+    /**
+     * @return $this
+     */
+    public function getParents()
+    {
+        return $this->hasMany(Feedback::className(), ['parent_id' => 'msg_id'])->with('parents');
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOrder()
+    {
+        return $this->hasOne(OrderInfo::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
     }
 }

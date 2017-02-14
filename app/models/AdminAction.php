@@ -12,7 +12,7 @@ use Yii;
  * @property string $action_code
  * @property string $relevance
  */
-class AdminAction extends \yii\db\ActiveRecord
+class AdminAction extends Foundation
 {
     /**
      * @inheritdoc
@@ -44,5 +44,13 @@ class AdminAction extends \yii\db\ActiveRecord
             'action_code' => Yii::t('app', 'Action Code'),
             'relevance' => Yii::t('app', 'Relevance'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParent()
+    {
+        return $this->hasOne(AdminAction::className(), ['parent_id' => 'action_id']);
     }
 }

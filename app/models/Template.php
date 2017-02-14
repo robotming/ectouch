@@ -17,7 +17,7 @@ use Yii;
  * @property string $theme
  * @property string $remarks
  */
-class Template extends \yii\db\ActiveRecord
+class Template extends Foundation
 {
     /**
      * @inheritdoc

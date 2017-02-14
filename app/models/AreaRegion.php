@@ -10,7 +10,7 @@ use Yii;
  * @property integer $shipping_area_id
  * @property integer $region_id
  */
-class AreaRegion extends \yii\db\ActiveRecord
+class AreaRegion extends Foundation
 {
     /**
      * @inheritdoc

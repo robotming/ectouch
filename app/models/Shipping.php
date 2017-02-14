@@ -20,7 +20,7 @@ use Yii;
  * @property integer $print_model
  * @property integer $shipping_order
  */
-class Shipping extends \yii\db\ActiveRecord
+class Shipping extends Foundation
 {
     /**
      * @inheritdoc

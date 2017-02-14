@@ -19,7 +19,7 @@ use Yii;
  * @property integer $use_end_date
  * @property string $min_goods_amount
  */
-class BonusType extends \yii\db\ActiveRecord
+class BonusType extends Foundation
 {
     /**
      * @inheritdoc

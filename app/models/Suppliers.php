@@ -12,7 +12,7 @@ use Yii;
  * @property string $suppliers_desc
  * @property integer $is_check
  */
-class Suppliers extends \yii\db\ActiveRecord
+class Suppliers extends Foundation
 {
     /**
      * @inheritdoc

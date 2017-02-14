@@ -14,7 +14,7 @@ use Yii;
  * @property integer $feed_type
  * @property integer $is_feed
  */
-class UserFeed extends \yii\db\ActiveRecord
+class UserFeed extends Foundation
 {
     /**
      * @inheritdoc

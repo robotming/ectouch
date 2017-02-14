@@ -14,7 +14,7 @@ use Yii;
  * @property string $position_desc
  * @property string $position_style
  */
-class AdPosition extends \yii\db\ActiveRecord
+class AdPosition extends Foundation
 {
     /**
      * @inheritdoc
@@ -51,5 +51,13 @@ class AdPosition extends \yii\db\ActiveRecord
             'position_desc' => Yii::t('app', 'Position Desc'),
             'position_style' => Yii::t('app', 'Position Style'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAd()
+    {
+        return $this->hasMany(Ad::className(), ['position_id' => 'position_id']);
     }
 }

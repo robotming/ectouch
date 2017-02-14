@@ -18,7 +18,7 @@ use Yii;
  * @property string $referer_path
  * @property string $access_url
  */
-class Stats extends \yii\db\ActiveRecord
+class Stats extends Foundation
 {
     /**
      * @inheritdoc

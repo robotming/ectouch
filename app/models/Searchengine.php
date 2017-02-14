@@ -11,7 +11,7 @@ use Yii;
  * @property string $searchengine
  * @property string $count
  */
-class Searchengine extends \yii\db\ActiveRecord
+class Searchengine extends Foundation
 {
     /**
      * @inheritdoc

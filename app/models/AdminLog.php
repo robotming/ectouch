@@ -13,7 +13,7 @@ use Yii;
  * @property string $log_info
  * @property string $ip_address
  */
-class AdminLog extends \yii\db\ActiveRecord
+class AdminLog extends Foundation
 {
     /**
      * @inheritdoc
@@ -47,5 +47,13 @@ class AdminLog extends \yii\db\ActiveRecord
             'log_info' => Yii::t('app', 'Log Info'),
             'ip_address' => Yii::t('app', 'Ip Address'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(AdminUser::className(), ['user_id' => 'user_id']);
     }
 }

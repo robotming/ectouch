@@ -15,7 +15,7 @@ use Yii;
  * @property string $url
  * @property integer $ad_status
  */
-class AdCustom extends \yii\db\ActiveRecord
+class AdCustom extends Foundation
 {
     /**
      * @inheritdoc

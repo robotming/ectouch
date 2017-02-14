@@ -12,7 +12,7 @@ use Yii;
  * @property string $action_list
  * @property string $role_describe
  */
-class Role extends \yii\db\ActiveRecord
+class Role extends Foundation
 {
     /**
      * @inheritdoc

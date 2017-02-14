@@ -22,7 +22,7 @@ use Yii;
  * @property string $keywords
  * @property string $description
  */
-class Topic extends \yii\db\ActiveRecord
+class Topic extends Foundation
 {
     /**
      * @inheritdoc

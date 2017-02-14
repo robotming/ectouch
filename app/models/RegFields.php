@@ -14,7 +14,7 @@ use Yii;
  * @property integer $type
  * @property integer $is_need
  */
-class RegFields extends \yii\db\ActiveRecord
+class RegFields extends Foundation
 {
     /**
      * @inheritdoc

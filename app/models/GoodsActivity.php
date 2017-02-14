@@ -19,7 +19,7 @@ use Yii;
  * @property integer $is_finished
  * @property string $ext_info
  */
-class GoodsActivity extends \yii\db\ActiveRecord
+class GoodsActivity extends Foundation
 {
     /**
      * @inheritdoc
@@ -60,5 +60,21 @@ class GoodsActivity extends \yii\db\ActiveRecord
             'is_finished' => Yii::t('app', 'Is Finished'),
             'ext_info' => Yii::t('app', 'Ext Info'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasOne(Products::className(), ['product_id' => 'product_id']);
     }
 }

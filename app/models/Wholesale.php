@@ -14,7 +14,7 @@ use Yii;
  * @property string $prices
  * @property integer $enabled
  */
-class Wholesale extends \yii\db\ActiveRecord
+class Wholesale extends Foundation
 {
     /**
      * @inheritdoc

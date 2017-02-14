@@ -12,7 +12,7 @@ use Yii;
  * @property integer $enabled
  * @property string $attr_group
  */
-class GoodsType extends \yii\db\ActiveRecord
+class GoodsType extends Foundation
 {
     /**
      * @inheritdoc

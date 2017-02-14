@@ -11,7 +11,7 @@ use Yii;
  * @property string $article_id
  * @property integer $admin_id
  */
-class GoodsArticle extends \yii\db\ActiveRecord
+class GoodsArticle extends Foundation
 {
     /**
      * @inheritdoc

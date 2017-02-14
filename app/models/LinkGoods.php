@@ -12,7 +12,7 @@ use Yii;
  * @property integer $is_double
  * @property integer $admin_id
  */
-class LinkGoods extends \yii\db\ActiveRecord
+class LinkGoods extends Foundation
 {
     /**
      * @inheritdoc

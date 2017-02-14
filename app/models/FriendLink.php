@@ -13,7 +13,7 @@ use Yii;
  * @property string $link_logo
  * @property integer $show_order
  */
-class FriendLink extends \yii\db\ActiveRecord
+class FriendLink extends Foundation
 {
     /**
      * @inheritdoc

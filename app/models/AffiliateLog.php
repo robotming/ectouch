@@ -16,7 +16,7 @@ use Yii;
  * @property integer $point
  * @property integer $separate_type
  */
-class AffiliateLog extends \yii\db\ActiveRecord
+class AffiliateLog extends Foundation
 {
     /**
      * @inheritdoc
@@ -54,5 +54,21 @@ class AffiliateLog extends \yii\db\ActiveRecord
             'point' => Yii::t('app', 'Point'),
             'separate_type' => Yii::t('app', 'Separate Type'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOrder()
+    {
+        return $this->hasOne(OrderInfo::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
     }
 }

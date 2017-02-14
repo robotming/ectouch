@@ -24,7 +24,7 @@ use Yii;
  * @property integer $is_gift
  * @property string $goods_attr_id
  */
-class OrderGoods extends \yii\db\ActiveRecord
+class OrderGoods extends Foundation
 {
     /**
      * @inheritdoc

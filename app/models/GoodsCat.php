@@ -10,7 +10,7 @@ use Yii;
  * @property string $goods_id
  * @property integer $cat_id
  */
-class GoodsCat extends \yii\db\ActiveRecord
+class GoodsCat extends Foundation
 {
     /**
      * @inheritdoc

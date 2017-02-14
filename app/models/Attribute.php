@@ -18,7 +18,7 @@ use Yii;
  * @property integer $is_linked
  * @property integer $attr_group
  */
-class Attribute extends \yii\db\ActiveRecord
+class Attribute extends Foundation
 {
     /**
      * @inheritdoc
@@ -58,5 +58,13 @@ class Attribute extends \yii\db\ActiveRecord
             'is_linked' => Yii::t('app', 'Is Linked'),
             'attr_group' => Yii::t('app', 'Attr Group'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoodsType()
+    {
+        return $this->hasOne(GoodsType::className(), ['cat_id' => 'cat_id']);
     }
 }

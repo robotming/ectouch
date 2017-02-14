@@ -17,7 +17,7 @@ use Yii;
  * @property string $action_note
  * @property string $log_time
  */
-class OrderAction extends \yii\db\ActiveRecord
+class OrderAction extends Foundation
 {
     /**
      * @inheritdoc

@@ -17,7 +17,7 @@ use Yii;
  * @property string $url
  * @property string $type
  */
-class Nav extends \yii\db\ActiveRecord
+class Nav extends Foundation
 {
     /**
      * @inheritdoc

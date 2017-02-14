@@ -13,7 +13,7 @@ use Yii;
  * @property string $attr_value
  * @property string $attr_price
  */
-class GoodsAttr extends \yii\db\ActiveRecord
+class GoodsAttr extends Foundation
 {
     /**
      * @inheritdoc
@@ -48,5 +48,21 @@ class GoodsAttr extends \yii\db\ActiveRecord
             'attr_value' => Yii::t('app', 'Attr Value'),
             'attr_price' => Yii::t('app', 'Attr Price'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAttr()
+    {
+        return $this->hasOne(Attribute::className(), ['attr_id' => 'attr_id']);
     }
 }

@@ -11,7 +11,7 @@ use Yii;
  * @property string $expiry
  * @property string $data
  */
-class SessionsData extends \yii\db\ActiveRecord
+class SessionsData extends Foundation
 {
     /**
      * @inheritdoc

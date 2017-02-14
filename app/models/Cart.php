@@ -27,7 +27,7 @@ use Yii;
  * @property integer $can_handsel
  * @property string $goods_attr_id
  */
-class Cart extends \yii\db\ActiveRecord
+class Cart extends Foundation
 {
     /**
      * @inheritdoc
@@ -82,4 +82,29 @@ class Cart extends \yii\db\ActiveRecord
             'goods_attr_id' => Yii::t('app', 'Goods Attr ID'),
         ];
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasOne(Products::className(), ['product_id' => 'product_id']);
+    }
+
 }

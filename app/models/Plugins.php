@@ -13,7 +13,7 @@ use Yii;
  * @property integer $assign
  * @property string $install_date
  */
-class Plugins extends \yii\db\ActiveRecord
+class Plugins extends Foundation
 {
     /**
      * @inheritdoc

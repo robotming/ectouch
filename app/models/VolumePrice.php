@@ -12,7 +12,7 @@ use Yii;
  * @property integer $volume_number
  * @property string $volume_price
  */
-class VolumePrice extends \yii\db\ActiveRecord
+class VolumePrice extends Foundation
 {
     /**
      * @inheritdoc

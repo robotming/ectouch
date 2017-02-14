@@ -13,7 +13,7 @@ use Yii;
  * @property integer $goods_number
  * @property integer $admin_id
  */
-class PackageGoods extends \yii\db\ActiveRecord
+class PackageGoods extends Foundation
 {
     /**
      * @inheritdoc

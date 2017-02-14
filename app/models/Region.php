@@ -13,7 +13,7 @@ use Yii;
  * @property integer $region_type
  * @property integer $agency_id
  */
-class Region extends \yii\db\ActiveRecord
+class Region extends Foundation
 {
     /**
      * @inheritdoc

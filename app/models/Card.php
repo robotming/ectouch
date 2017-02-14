@@ -14,7 +14,7 @@ use Yii;
  * @property string $free_money
  * @property string $card_desc
  */
-class Card extends \yii\db\ActiveRecord
+class Card extends Foundation
 {
     /**
      * @inheritdoc

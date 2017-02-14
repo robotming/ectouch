@@ -13,7 +13,7 @@ use Yii;
  * @property string $bid_price
  * @property string $bid_time
  */
-class AuctionLog extends \yii\db\ActiveRecord
+class AuctionLog extends Foundation
 {
     /**
      * @inheritdoc
@@ -47,5 +47,21 @@ class AuctionLog extends \yii\db\ActiveRecord
             'bid_price' => Yii::t('app', 'Bid Price'),
             'bid_time' => Yii::t('app', 'Bid Time'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoodsActivity()
+    {
+        return $this->hasOne(GoodsActivity::className(), ['act_id' => 'act_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'bid_user']);
     }
 }

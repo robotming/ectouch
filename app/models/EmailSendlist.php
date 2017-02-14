@@ -15,7 +15,7 @@ use Yii;
  * @property integer $pri
  * @property integer $last_send
  */
-class EmailSendlist extends \yii\db\ActiveRecord
+class EmailSendlist extends Foundation
 {
     /**
      * @inheritdoc
@@ -52,5 +52,13 @@ class EmailSendlist extends \yii\db\ActiveRecord
             'pri' => Yii::t('app', 'Pri'),
             'last_send' => Yii::t('app', 'Last Send'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTemplate()
+    {
+        return $this->hasOne(MailTemplates::className(), ['template_id' => 'template_id']);
     }
 }

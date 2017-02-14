@@ -70,7 +70,7 @@ use Yii;
  * @property string $parent_id
  * @property string $discount
  */
-class OrderInfo extends \yii\db\ActiveRecord
+class OrderInfo extends Foundation
 {
     /**
      * @inheritdoc

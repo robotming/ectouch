@@ -15,7 +15,7 @@ use Yii;
  * @property integer $show_price
  * @property integer $special_rank
  */
-class UserRank extends \yii\db\ActiveRecord
+class UserRank extends Foundation
 {
     /**
      * @inheritdoc

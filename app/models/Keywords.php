@@ -12,7 +12,7 @@ use Yii;
  * @property string $keyword
  * @property string $count
  */
-class Keywords extends \yii\db\ActiveRecord
+class Keywords extends Foundation
 {
     /**
      * @inheritdoc

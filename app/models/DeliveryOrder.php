@@ -38,7 +38,7 @@ use Yii;
  * @property integer $status
  * @property integer $agency_id
  */
-class DeliveryOrder extends \yii\db\ActiveRecord
+class DeliveryOrder extends Foundation
 {
     /**
      * @inheritdoc
@@ -104,5 +104,45 @@ class DeliveryOrder extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Status'),
             'agency_id' => Yii::t('app', 'Agency ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDeliveryGoods()
+    {
+        return $this->hasMany(DeliveryGoods::className(), ['delivery_id' => 'delivery_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOrder()
+    {
+        return $this->hasOne(OrderInfo::className(), ['order_id' => 'order_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getShipping()
+    {
+        return $this->hasOne(Shipping::className(), ['shipping_id' => 'shipping_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAgency()
+    {
+        return $this->hasOne(Agency::className(), ['agency_id' => 'agency_id']);
     }
 }

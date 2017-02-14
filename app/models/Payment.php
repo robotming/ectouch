@@ -18,7 +18,7 @@ use Yii;
  * @property integer $is_cod
  * @property integer $is_online
  */
-class Payment extends \yii\db\ActiveRecord
+class Payment extends Foundation
 {
     /**
      * @inheritdoc

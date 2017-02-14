@@ -12,7 +12,7 @@ use Yii;
  * @property string $goods_id
  * @property string $tag_words
  */
-class Tag extends \yii\db\ActiveRecord
+class Tag extends Foundation
 {
     /**
      * @inheritdoc

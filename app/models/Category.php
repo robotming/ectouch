@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\data\Pagination;
 
 /**
  * This is the model class for table "{{%category}}".
@@ -21,7 +22,7 @@ use Yii;
  * @property integer $grade
  * @property string $filter_attr
  */
-class Category extends \yii\db\ActiveRecord
+class Category extends Foundation
 {
     /**
      * @inheritdoc
@@ -67,5 +68,13 @@ class Category extends \yii\db\ActiveRecord
             'grade' => Yii::t('app', 'Grade'),
             'filter_attr' => Yii::t('app', 'Filter Attr'),
         ];
+    }
+
+    /**
+     * @return $this
+     */
+    public function getParents()
+    {
+        return $this->hasMany(Category::className(), ['parent_id' => 'cat_id'])->with('parents');
     }
 }

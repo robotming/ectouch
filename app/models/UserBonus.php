@@ -15,7 +15,7 @@ use Yii;
  * @property string $order_id
  * @property integer $emailed
  */
-class UserBonus extends \yii\db\ActiveRecord
+class UserBonus extends Foundation
 {
     /**
      * @inheritdoc

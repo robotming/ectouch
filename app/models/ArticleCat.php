@@ -16,7 +16,7 @@ use Yii;
  * @property integer $show_in_nav
  * @property integer $parent_id
  */
-class ArticleCat extends \yii\db\ActiveRecord
+class ArticleCat extends Foundation
 {
     /**
      * @inheritdoc
@@ -52,5 +52,21 @@ class ArticleCat extends \yii\db\ActiveRecord
             'show_in_nav' => Yii::t('app', 'Show In Nav'),
             'parent_id' => Yii::t('app', 'Parent ID'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getArticle()
+    {
+        return $this->hasMany(Article::className(), ['cat_id' => 'cat_id']);
+    }
+
+    /**
+     * @return $this
+     */
+    public function getParents()
+    {
+        return $this->hasMany(ArticleCat::className(), ['parent_id' => 'cat_id'])->with('parents');
     }
 }

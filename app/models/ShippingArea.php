@@ -12,7 +12,7 @@ use Yii;
  * @property integer $shipping_id
  * @property string $configure
  */
-class ShippingArea extends \yii\db\ActiveRecord
+class ShippingArea extends Foundation
 {
     /**
      * @inheritdoc

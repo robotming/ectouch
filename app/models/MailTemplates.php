@@ -16,7 +16,7 @@ use Yii;
  * @property string $last_send
  * @property string $type
  */
-class MailTemplates extends \yii\db\ActiveRecord
+class MailTemplates extends Foundation
 {
     /**
      * @inheritdoc

@@ -13,7 +13,7 @@ use Yii;
  * @property string $product_sn
  * @property integer $product_number
  */
-class Products extends \yii\db\ActiveRecord
+class Products extends Foundation
 {
     /**
      * @inheritdoc

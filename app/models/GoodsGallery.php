@@ -14,7 +14,7 @@ use Yii;
  * @property string $thumb_url
  * @property string $img_original
  */
-class GoodsGallery extends \yii\db\ActiveRecord
+class GoodsGallery extends Foundation
 {
     /**
      * @inheritdoc
@@ -48,5 +48,10 @@ class GoodsGallery extends \yii\db\ActiveRecord
             'thumb_url' => Yii::t('app', 'Thumb Url'),
             'img_original' => Yii::t('app', 'Img Original'),
         ];
+    }
+
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
     }
 }

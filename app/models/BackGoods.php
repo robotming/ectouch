@@ -19,7 +19,7 @@ use Yii;
  * @property integer $send_number
  * @property string $goods_attr
  */
-class BackGoods extends \yii\db\ActiveRecord
+class BackGoods extends Foundation
 {
     /**
      * @inheritdoc
@@ -60,5 +60,29 @@ class BackGoods extends \yii\db\ActiveRecord
             'send_number' => Yii::t('app', 'Send Number'),
             'goods_attr' => Yii::t('app', 'Goods Attr'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBackOrder()
+    {
+        return $this->hasOne(BackOrder::className(), ['back_id' => 'back_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasOne(Products::className(), ['product_id' => 'product_id']);
     }
 }

@@ -24,7 +24,7 @@ use Yii;
  * @property string $allow_ip
  * @property string $alow_files
  */
-class Crons extends \yii\db\ActiveRecord
+class Crons extends Foundation
 {
     /**
      * @inheritdoc

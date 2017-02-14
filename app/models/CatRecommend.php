@@ -10,7 +10,7 @@ use Yii;
  * @property integer $cat_id
  * @property integer $recommend_type
  */
-class CatRecommend extends \yii\db\ActiveRecord
+class CatRecommend extends Foundation
 {
     /**
      * @inheritdoc

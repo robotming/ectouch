@@ -11,7 +11,7 @@ use Yii;
  * @property string $agency_name
  * @property string $agency_desc
  */
-class Agency extends \yii\db\ActiveRecord
+class Agency extends Foundation
 {
     /**
      * @inheritdoc

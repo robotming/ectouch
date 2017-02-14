@@ -42,7 +42,7 @@ use Yii;
  * @property string $passwd_question
  * @property string $passwd_answer
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends Foundation
 {
     /**
      * @inheritdoc

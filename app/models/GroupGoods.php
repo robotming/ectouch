@@ -12,7 +12,7 @@ use Yii;
  * @property string $goods_price
  * @property integer $admin_id
  */
-class GroupGoods extends \yii\db\ActiveRecord
+class GroupGoods extends Foundation
 {
     /**
      * @inheritdoc

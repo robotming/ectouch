@@ -51,7 +51,7 @@ use Yii;
  * @property integer $suppliers_id
  * @property integer $is_check
  */
-class Goods extends \yii\db\ActiveRecord
+class Goods extends Foundation
 {
     /**
      * @inheritdoc
@@ -129,5 +129,54 @@ class Goods extends \yii\db\ActiveRecord
             'suppliers_id' => Yii::t('app', 'Suppliers ID'),
             'is_check' => Yii::t('app', 'Is Check'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['cat_id' => 'cat_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getExtCategory()
+    {
+        return $this->hasMany(Category::className(), ['cat_id' => 'cat_id'])
+            ->viaTable('goods_cat', ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBrand()
+    {
+        return $this->hasOne(Brand::className(), ['brand_id' => 'brand_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGallery(){
+        return $this->hasMany(GoodsGallery::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSupplier()
+    {
+        return $this->hasOne(Suppliers::className(), ['suppliers_id' => 'suppliers_id']);
+    }
+
+    /**
+     * @return $this
+     */
+    public function getArticle()
+    {
+        return $this->hasMany(Article::className(), ['article_id' => 'article_id'])
+            ->viaTable('goods_article', ['goods_id' => 'goods_id']);
     }
 }

@@ -22,7 +22,7 @@ use Yii;
  * @property string $link
  * @property string $description
  */
-class Article extends \yii\db\ActiveRecord
+class Article extends Foundation
 {
     /**
      * @inheritdoc
@@ -69,5 +69,19 @@ class Article extends \yii\db\ActiveRecord
             'link' => Yii::t('app', 'Link'),
             'description' => Yii::t('app', 'Description'),
         ];
+    }
+
+    public function getCategory()
+    {
+        $this->hasOne(ArticleCat::className(), ['cat_id' => 'cat_id']);
+    }
+
+    /**
+     * @return $this
+     */
+    public function getGoods()
+    {
+        return $this->hasMany(Goods::className(), ['goods_id' => 'goods_id'])
+            ->viaTable('goods_article', ['article_id' => 'article_id']);
     }
 }

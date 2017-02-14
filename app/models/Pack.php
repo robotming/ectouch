@@ -14,7 +14,7 @@ use Yii;
  * @property integer $free_money
  * @property string $pack_desc
  */
-class Pack extends \yii\db\ActiveRecord
+class Pack extends Foundation
 {
     /**
      * @inheritdoc

@@ -13,7 +13,7 @@ use Yii;
  * @property integer $order_type
  * @property integer $is_paid
  */
-class PayLog extends \yii\db\ActiveRecord
+class PayLog extends Foundation
 {
     /**
      * @inheritdoc

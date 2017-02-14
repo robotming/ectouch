@@ -17,7 +17,7 @@ use Yii;
  * @property string $change_desc
  * @property integer $change_type
  */
-class AccountLog extends \yii\db\ActiveRecord
+class AccountLog extends Foundation
 {
     /**
      * @inheritdoc
@@ -56,5 +56,13 @@ class AccountLog extends \yii\db\ActiveRecord
             'change_desc' => Yii::t('app', 'Change Desc'),
             'change_type' => Yii::t('app', 'Change Type'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(Users::className(), ['user_id' => 'user_id']);
     }
 }

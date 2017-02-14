@@ -5,7 +5,6 @@ namespace app\models;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
-use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 /**
@@ -27,7 +26,7 @@ use yii\web\IdentityInterface;
  * @property string $todolist
  * @property integer $role_id
  */
-class AdminUser extends ActiveRecord implements IdentityInterface
+class AdminUser extends Foundation implements IdentityInterface
 {
 
     const STATUS_DELETED = 0;
@@ -40,7 +39,7 @@ class AdminUser extends ActiveRecord implements IdentityInterface
     {
         return '{{%admin_user}}';
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -65,10 +64,36 @@ class AdminUser extends ActiveRecord implements IdentityInterface
             [['ec_salt'], 'string', 'max' => 10],
             [['last_ip'], 'string', 'max' => 15],
             [['lang_type'], 'string', 'max' => 50],
-            
+
             // ['status', 'default', 'value' => self::STATUS_ACTIVE],
             // ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRole()
+    {
+        return $this->hasOne(Role::className(), ['role_id' => 'role_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLog()
+    {
+        return $this->hasMany(AdminLog::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @param int $type 1为用户发送的消息，2为用户接收的消息
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMessage($type)
+    {
+        $fieldType = ($type == 1) ? 'sender_id' : 'receiver_id';
+        return $this->hasMany(AdminMessage::className(), [$fieldType => 'user_id']);
     }
 
     /**
@@ -130,7 +155,7 @@ class AdminUser extends ActiveRecord implements IdentityInterface
             return false;
         }
 
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        $timestamp = (int)substr($token, strrpos($token, '_') + 1);
         $expire = Yii::$app->params['user.passwordResetTokenExpire'];
         return $timestamp + $expire >= time();
     }

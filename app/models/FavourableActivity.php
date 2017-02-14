@@ -21,7 +21,7 @@ use Yii;
  * @property string $gift
  * @property integer $sort_order
  */
-class FavourableActivity extends \yii\db\ActiveRecord
+class FavourableActivity extends Foundation
 {
     /**
      * @inheritdoc
